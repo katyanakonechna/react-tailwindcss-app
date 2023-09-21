@@ -15,3 +15,75 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+    color: theme('colors.primary.text');
+  }
+  h2 {
+    @apply text-xl;
+    @apply font-bold;
+    color: theme('colors.secondary.base');
+  }
+  h3 {
+    @apply text-lg;
+    color: theme('colors.primary.text');
+  }
+  p {
+    @apply text-base;
+    color: theme('colors.primary.text');
+  }
+  label, a {
+    @apply text-sm font-bold;
+    color: theme('colors.primary.text');
+  }
+  span {
+    @apply text-xs;
+  }
+
+  .btn {
+    @apply font-bold py-2 px-4 rounded;
+  }
+
+  .btn-primary {
+    @apply font-bold py-2 px-4 rounded w-full;
+    color: theme('colors.primary.text');
+    background-color: theme('colors.primary.base');
+  }
+
+  .btn-primary__outline {
+    @apply font-bold py-2 px-4 rounded w-full;
+    color: theme('colors.primary.base');
+    border: 1px solid theme('colors.primary.base');
+  }
+
+  .btn-secondary {
+    @apply font-bold py-2 px-4 rounded w-full;
+    color: theme('colors.secondary.text');
+    background-color: theme('colors.secondary.base');
+  }
+
+  .btn-secondary__outline {
+    @apply font-bold py-2 px-4 rounded w-full;
+    color: theme('colors.secondary.base');
+    background-color: theme('colors.secondary.base');
+  }
+  .input-error {
+    @apply font-bold text-sm absolute;
+    color: theme('colors.warning');
+    bottom: -20px;
+    left: 0;
+  }
+  input {
+    @apply rounded-md text-sm h-10;
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+    color: theme('colors.primary.text');
+    box-shadow: 0 0 1px 2px theme('colors.secondary.base');
+  }
+  input:focus {
+    outline: none;
+  }
+}

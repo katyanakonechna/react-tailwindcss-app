@@ -1,25 +1,44 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'tailwindcss/defaultTheme';
+import typography from '@tailwindcss/typography';
 
-module.exports = {
+export default {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        'chinese-violet': '#6F6179',
-        'chocolate-cosmos': '#450019',
-        'gun-metal': '#293241',
-        'cool-gray': '#8491A9',
-        'white': '#f0f0f0',
-        'gray-100': '#8EA9C1'
-  
+    dark: 'media',
+    colors: {
+      transparent: 'transparent',
+      white: '#f6f6f6',
+      warning:'#d62828',
+      success: '#6a994e',
+      primary: {
+        base: '#FFBF46',
+        text: '#241623'
       },
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      secondary: {
+        base: '#648381',
+        text: '#E8EDED'
       },
+      accents: {
+        text: '#575761',
+        text_2: '#7D6167',
+      },
+      green: {
+        light: '#E4FDE1',
+        main: '#8ACB88',
+        dark: '#637E7E'
+      },
+      gray: {
+        light: '#5D6B6F',
+        main: '#575760',
+        dark: '#44444B'
+      }
     },
+    fontFamily: {
+      sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+    }
   },
   plugins: [],
 }
