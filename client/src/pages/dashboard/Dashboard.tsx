@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import Header from '../../../../src/components/Header/Header';
 
 const Dashboard = () => {
     const [isScrolled, setScrolled] = useState(false);
