@@ -10,6 +10,7 @@
     "@types/node": "^16.18.46",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "axios": "^1.5.1",
     "formik": "^2.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -24,9 +25,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint": "eslint ..",
+    "lint:fix": "eslint --fix .."
   },
+  "proxy": "http://localhost:8080/",
   "eslintConfig": {
     "extends": [
       "react-app",
