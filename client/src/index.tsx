@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Login from './pages/auth/login/Login';
 import Register from './pages/auth/registration/Register';
+import Dashboard from './pages/dashboard/Dashboard';
 import reportWebVitals from './reportWebVitals';
 import {
     createBrowserRouter,
@@ -10,14 +11,18 @@ import {
 } from "react-router-dom";
 
 const router = createBrowserRouter([
-    {
-        path: "/login",
-        element: <Login/>,
-    },
-    {
-        path: "/register",
-        element: <Register/>
-    }
+  {
+    path: "/",
+    element: <Dashboard />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(

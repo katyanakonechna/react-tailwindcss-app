@@ -4,6 +4,7 @@ interface Props {
     label: string;
     name: string,
     type: string;
+    autoComplete?: string;
 }
 
 const InputField = ({label, ...props}: Props) => {

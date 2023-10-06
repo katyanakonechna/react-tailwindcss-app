@@ -45,9 +45,9 @@ app.get('/', (req, res) => {
 
 app.get('/authenticate', auth, (req, res) => {
     console.log(req)
-    if (req.auth.user === 'admin') {
+    if (req.auth.user === 'admin@test.com') {
         res.send(JSON.stringify(DummyAdmin));
-    } else if (req.auth.user === 'user') {
+    } else if (req.auth.user === 'user@test.com') {
         res.send(JSON.stringify(DummyUser));
     }
 });

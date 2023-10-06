@@ -1,5 +1,6 @@
 import React from "react";
 import * as yup from 'yup';
+import { useNavigate } from "react-router-dom";
 import {Formik, Form} from 'formik';
 import {FormikHelpers} from "formik/dist/types";
 import InputField from "../../../components/inputField/InputField";
@@ -8,10 +9,11 @@ import {login} from "../../../api/api";
 import {LoginData} from "../../../types/auth.interfaces";
 
 const Login = () => {
+    const navigate = useNavigate();
     const onSubmit = async (values: LoginData, {setSubmitting}: FormikHelpers<LoginData>) => {
         try {
             const res = await login(values);
-            console.log(res.data);
+            navigate('/');
         } catch (e) {
             console.log(e);
         }
@@ -19,7 +21,7 @@ const Login = () => {
     }
 
     const validationSchema = yup.object().shape({
-        email: yup.string().email('Invalid email address').required('Required'),
+        username: yup.string().email('Invalid email address').required('Required'),
         password: yup.string().required('Required')
     });
 
@@ -38,7 +40,7 @@ const Login = () => {
                         {({isSubmitting}) => (
                             <Form className="space-y-6 grid gap-4 pb-6">
                                 <InputField label="Email address" name="username" type="email"/>
-                                <InputField label="Password" name="password" type="password"/>
+                                <InputField label="Password" name="password" autoComplete="current-password" type="password"/>
                                 <div>
                                     <button type="submit" disabled={isSubmitting} className="btn-primary">Sign in
                                     </button>
